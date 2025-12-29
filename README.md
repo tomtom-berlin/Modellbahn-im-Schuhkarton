@@ -4,12 +4,14 @@ Ein kleines Rangierpuzzle (Inglenook siding) im 5-3-3 oder 3-2-2-Modus, je nach 
 Größe: 2 Teile a 36 cm x 22 cm x 19 cm (B x T x H)
 
 Das DCC-Signal wird mit einem Seeeduino XIAO RP2040 erzeugt, als H-Bridge ist ein DRV8871 eingesetzt. Strommessung mit MAX471. Eingangsspannung 12V =. 
-Die Verbindung zur Fernbedienung wird mit ESP-Now (unverschlüsselt) aufgebaut, als Empfänger ist ein ESP32-C3 Super mini per UART an den RP2040 angehängt.
+Die Verbindung zur Fernbedienung wird mit ESP-Now -unverschlüsselt- (ISRem-ESPNOW, ESP-Now-Receiver) oder Bluetooth (BLE-Client, ISRem-BLE) aufgebaut, als Empfänger ist ein ESP32-C3 Super mini per UART an den RP2040 angehängt. Im Moment funtkionier Bluetooth besser, die Verbindung via ESP-Now "hakt" regelmäßig
+
 Programmiersprache für die "Zentrale": Micropython.
 
 Die Dekoder: - für die Beleuchtung: ATmega328P als "raw iron"
              - für die Weiche: ATtiny85 (Sparkfun), TTfiligran Weichenantrieb mit Schalter zur Herzstückpolarisierung, Servo MG996.
              - für die Drehscheibe auf dem ungestalteten Teil: Seeeduino XIAO SAMD21, Steppermotor GS12-15BY 1:100
+
 Programmiersprache für Decoder: C
 
 Gebäude, Drehscheibe und "Schuhkarton": div. 3D-Drucke, Güterschuppen von Auhagen
